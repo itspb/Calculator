@@ -7,11 +7,12 @@ import java.util.regex.Pattern;
 public class Main {
     private static String regexArabic = "\\A(10|[1-9])\\s*([+\\-*/])\\s*(10|[1-9])\\z";
     private static String regexRoman = "\\A(I|II|III|IV|V|VI|VII|VIII|IX|X)\\s*([+\\-*/])\\s*(I|II|III|IV|V|VI|VII|VIII|IX|X)\\z";
-    private static Calculator calculator = new Calculator();
+    private static Calculator calculator;
 
     public static void main(String[] args) throws Exception {
         System.out.println("Arabic and Roman numbers from 1 to 10 inclusive are allowed.\nEnter \"exit\" for exit.");
         Scanner scanner = new Scanner(System.in);
+        calculator = new Calculator();
         String input;
         while (!scanner.hasNext("exit")) {
             input = scanner.nextLine().toUpperCase();
